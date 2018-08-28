@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<conio.h>
+struct stu
+{
+char name[10];
+int age;
+char branch[5];
+int year;
+int sem;
+int semscore;
+}s[10];
+int n;
+void add(int n)
+{
+printf("enter the following details:");
+printf("Name:");
+scanf("%s",s[n].name);
+printf("Age:");
+scanf("%d",s[n].age);
+printf("Branch:");
+scanf("%s",s[n].branch);
+printf("Year:");
+scanf("%d",s[n].year);
+printf("Semester:");
+scanf("%d",s[n].sem);
+printf("Past semester score in % :" );
+scanf("%d",s[n].semscore);
+}
+void display()
+{
+int i;
+for(i=0;i<n;i++)
+{
+printf("Name:%s",s[i].name);
+printf("Age:%d",s[i].age);
+printf("Branch:%s",s[i].branch);
+printf("Year:%d",s[i].year);
+printf("Semester:%d",s[i].sem);
+printf("Sem score(%):%d",s[i].semscore);
+printf("----------------------------------------");
+}
+}
+void retrieve()
+{
+int s,i;
+printf("\nenter the semester score to get filter results");
+scanf("%d",s);
+for(i=0;i<n;i++)
+{
+if(s[i].semscore>=s)
+{
+printf("Name:%s",s[i].name);
+printf("Age:%d",s[i].age);
+printf("Branch:%s",s[i].branch);
+printf("Year:%d",s[i].year);
+printf("Semester:%d",s[i].sem);
+printf("Sem score(%):%d",s[i].semscore);
+printf("----------------------------------------");
+}
+}
+}
+
+void main()
+{
+int c;char ch;
+n=0;
+clrscr();
+printf("   ---------WELCOME TO STUDENT DATABASE---------");
+do
+{
+printf("\nWhat do you want to do?");
+printf("\n1:Add a new form     2:Display data     3:Filter results");
+scanf("%d",&c);
+switch(c)
+{
+case 1:add(n);
+	   n++;
+	   break;
+case 2:display();
+	   break;
+case 3:retrieve();
+	   break;
+default: printf("\nenter valid option");
+}
+printf("\ndo you want to continue y/n?");
+fflush(stdin);
+scanf("%c",&ch);
+}while(ch!='n');
+getch();
+}
+
+
+
+
+
+
