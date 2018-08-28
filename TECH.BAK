@@ -16,15 +16,15 @@ printf("enter the following details:");
 printf("Name:");
 scanf("%s",s[n].name);
 printf("Age:");
-scanf("%d",s[n].age);
+scanf("%d",&s[n].age);
 printf("Branch:");
 scanf("%s",s[n].branch);
 printf("Year:");
-scanf("%d",s[n].year);
+scanf("%d",&s[n].year);
 printf("Semester:");
-scanf("%d",s[n].sem);
+scanf("%d",&s[n].sem);
 printf("Past semester score in % :" );
-scanf("%d",s[n].semscore);
+scanf("%d",&s[n].semscore);
 }
 void display()
 {
@@ -44,7 +44,7 @@ void retrieve()
 {
 int s,i;
 printf("\nenter the semester score to get filter results");
-scanf("%d",s);
+scanf("%d",&s);
 for(i=0;i<n;i++)
 {
 if(s[i].semscore>=s)
